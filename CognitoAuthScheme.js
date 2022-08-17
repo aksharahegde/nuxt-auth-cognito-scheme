@@ -61,9 +61,7 @@ export default class CognitoAuthScheme {
   _scheduleRefresh() {
     if (
       this.options.refreshInterval &&
-      process.client &&
-      !this.$auth.$storage.getState("interval") &&
-      this.$auth.$state.user
+      !this.$auth.$storage.getState("interval")
     ) {
       this.$auth.$storage.setState(
         "interval",
